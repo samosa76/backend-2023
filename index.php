@@ -28,11 +28,22 @@ class Animal
     }
 
     public function update($index, $data){
+
+        if(!isset($this->animals[$index])){
+            throw new Exception("Invalid Index Update");
+        }
+
         $this->animals[$index] = $data;
         return $this;
     }
 
     public function destroy($index){
+
+        if(!isset($this->animals[$index])){
+            throw new Exception("Invalid Index Delete");
+            
+        }
+
         unset($this->animals[$index]);
     }
     
