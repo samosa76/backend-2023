@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Exception;
 use Illuminate\Http\Request;
 
+use function PHPUnit\Framework\isNull;
+
 class AnimalController extends Controller
 {
 
@@ -61,9 +63,9 @@ class AnimalController extends Controller
     }
 
     public function destroy($id){
-        if (!isset($this->animals[$id])) {
-            throw new Exception("invalid id");
-        }
+        
+        if (isNull($this->animals[$id]));
+
         /*
         penggunaan splice 
         $id digunakan uuntuk menentukan position
