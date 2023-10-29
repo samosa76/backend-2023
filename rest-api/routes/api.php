@@ -28,6 +28,4 @@ Route::put("/animals/{id}", [AnimalController::class, 'update']);
 
 Route::delete("/animals/{id}", [AnimalController::class, 'destroy']);
 
-Route::get('/students'   , [StudentController::class, 'index']);
-
-Route::post('/students' ,  [StudentController::class, 'store']);
+Route::apiResource('students', StudentController::class);
