@@ -40,13 +40,13 @@ class AnimalController extends Controller
             echo $value["name"], ", ";
             // echo $value, "<br>";
         }
+        //testing showing index with dump   
         // var_dump($this->tes);
         // print_r($this->animals);
     }
 
     public function store(Request $request){
         /*
-        penggunaan array_push()
         menambahkan data kedalam array
         */
         
@@ -65,6 +65,7 @@ class AnimalController extends Controller
     public function destroy($id){
         
         if (isNull($this->animals[$id]));
+        
 
         /*
         penggunaan splice 
